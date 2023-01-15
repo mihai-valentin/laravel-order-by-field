@@ -12,22 +12,22 @@ final class OrderByFieldServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        Builder::macro('orderByField', function (string $field, array $orders, string $direction = 'asc') {
+        Builder::macro('orderByField', function (string $field, array $order, string $direction = 'asc') {
             /** @var Builder $this */
 
             $grammar = $this->getGrammar();
 
-            $sql = OrderByFieldCompilerFactory::createFromGrammar($grammar)->compile($field, $orders, $direction);
+            $sql = OrderByFieldCompilerFactory::createFromGrammar($grammar)->compile($field, $order, $direction);
 
             return $this->orderByRaw($sql);
         });
 
-        Builder::macro('orderByFieldDesc', function (string $field, array $orders) {
+        Builder::macro('orderByFieldDesc', function (string $field, array $order) {
             /** @var Builder $this */
 
             $grammar = $this->getGrammar();
 
-            $sql = OrderByFieldCompilerFactory::createFromGrammar($grammar)->compile($field, $orders, 'desc');
+            $sql = OrderByFieldCompilerFactory::createFromGrammar($grammar)->compile($field, $order, 'desc');
 
             return $this->orderByRaw($sql);
         });
