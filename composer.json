@@ -1,0 +1,48 @@
+{
+    "name": "mihai-valentin/laravel-order-by-field",
+    "description": "A simple Laravel `Query\\Builder` extension that adds MySQL-like \"order by field\" feature",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "query", "builder", "mysql", "order by field"],
+    "authors": [
+        {
+            "name": "Mihai Valentin",
+            "email": "mihaivalentin373@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MihaiValentin\\LaravelOrderByFiled\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MihaiValentin\\LaravelOrderByField\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.4 || ^8.0",
+        "illuminate/database": "^9.0",
+        "illuminate/support": "^9.0"
+    },
+    "require-dev": {
+        "ext-mysqli": "*",
+        "ext-pgsql": "*",
+        "ext-sqlite3": "*",
+        "friendsofphp/php-cs-fixer": "^3.13",
+        "orchestra/testbench": "^7.19",
+        "phpstan/phpstan": "^1.9",
+        "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MihaiValentin\\LaravelOrderByFiled\\OrderByFieldServiceProvider"
+            ]
+        }
+    }
+}

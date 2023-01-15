@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  test-mysql-db:
+    container_name: test-mysql-db
+    image: mysql
+    tty: true
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: "123"
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    ports:
+      - "3306:3306"
+    restart: on-failure
+
+  test-pg-db:
+    container_name: test-pg-db
+    image: postgres
+    tty: true
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: "123"
+      POSTGRES_DB: test
+    ports:
+      - "5432:5432"
+    restart: on-failure
