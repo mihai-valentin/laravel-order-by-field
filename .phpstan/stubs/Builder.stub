@@ -4,5 +4,6 @@ namespace Illuminate\Contracts\Database\Query;
 
 /**
  * @method Builder orderByField(string $column, array $orders, string $direction = 'asc')
+ * @method Builder orderByFieldDesc(string $column, array $orders)
  */
 interface Builder {}

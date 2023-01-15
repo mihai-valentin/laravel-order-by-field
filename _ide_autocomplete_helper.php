@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Illuminate\Contracts\Database\Query {
+namespace Illuminate\Contracts\Database\Query;
 
-    use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
+use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
 
-    /**
-     * @method Builder orderByField(string $column, array $orders, string $direction = 'asc')
-     * @see OrderByFieldServiceProvider
-     */
-    interface Builder {}
-}
+/**
+ * @method Builder orderByField(string $column, array $orders, string $direction = 'asc')
+ * @method Builder orderByFieldDesc(string $column, array $orders)
+ *
+ * @see OrderByFieldServiceProvider
+ */
+interface Builder {}

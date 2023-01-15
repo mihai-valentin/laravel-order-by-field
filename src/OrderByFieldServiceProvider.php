@@ -21,5 +21,15 @@ final class OrderByFieldServiceProvider extends ServiceProvider
 
             return $this->orderByRaw($sql);
         });
+
+        Builder::macro('orderByFieldDesc', function (string $field, array $orders) {
+            /** @var Builder $this */
+
+            $grammar = $this->getGrammar();
+
+            $sql = OrderByFieldCompilerFactory::createFromGrammar($grammar)->compile($field, $orders, 'desc');
+
+            return $this->orderByRaw($sql);
+        });
     }
 }
