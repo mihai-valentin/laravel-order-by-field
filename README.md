@@ -133,7 +133,7 @@ the [Code of Conduct](https://github.com/mihai-valentin/laravel-order-by-field/b
 
 ## Contributing
 
-
+Please see [CONTRIBUTING.md](https://github.com/mihai-valentin/laravel-order-by-field/blob/bd7e55ff29a12f05d2f1c751705b98e0a589f096/CONTRIBUTING.md) for details.
 
 ## License
 
