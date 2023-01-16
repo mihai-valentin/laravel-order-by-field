@@ -130,4 +130,4 @@ make
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/mihai-valentin/laravel-order-by-field/blob/4c33ee313c815788d83daf099c8250d4c94dc546/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/mihai-valentin/laravel-order-by-field/blob/4c33ee313c815788d83daf099c8250d4c94dc546/LICENSE.md) for more information.
