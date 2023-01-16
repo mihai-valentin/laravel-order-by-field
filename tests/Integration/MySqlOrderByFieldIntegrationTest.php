@@ -7,20 +7,20 @@ declare(strict_types=1);
 namespace MihaiValentin\LaravelOrderByField\Tests\Integration;
 
 use Illuminate\Support\Facades\DB;
-use MihaiValentin\LaravelOrderByField\Tests\Config\PgSql;
+use MihaiValentin\LaravelOrderByField\Tests\Integration\Config\MySql;
 
-final class PostgresOrderByFieldTest extends OrderByFieldTest
+final class MySqlOrderByFieldIntegrationTest extends OrderByFieldServiceProviderAwareIntegrationTest
 {
     protected function defineEnvironment($app): void
     {
         $app['config']->set('database.default', 'test');
         $app['config']->set('database.connections.test', [
-            'driver' => PgSql::DRIVER,
-            'host' => PgSql::HOST,
-            'port' => PgSql::PORT,
-            'username' => PgSql::USERNAME,
-            'password' => PgSql::PASSWORD,
-            'database' => PgSql::DATABASE,
+            'driver' => MySql::DRIVER,
+            'host' => MySql::HOST,
+            'port' => MySql::PORT,
+            'username' => MySql::USERNAME,
+            'password' => MySql::PASSWORD,
+            'database' => MySql::DATABASE,
         ]);
     }
 
@@ -28,11 +28,11 @@ final class PostgresOrderByFieldTest extends OrderByFieldTest
     {
         parent::setUp();
 
-        DB::statement('drop table if exists "test_log";');
-        DB::statement('create table "test_log" (
-            "id" serial primary key,
-            "status" varchar(20),
-            "date" date
+        DB::statement('drop table if exists `test_log`;');
+        DB::statement('create table `test_log` (
+            `id` int unsigned primary key auto_increment,
+            `status` varchar(20),
+            `date` date
         );');
 
         DB::table('test_log')->insert([

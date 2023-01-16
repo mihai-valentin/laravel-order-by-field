@@ -12,13 +12,13 @@ namespace MihaiValentin\LaravelOrderByField\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
 
-final class MySqlOrderByFieldMacrosTest extends OrderByFieldMacrosTest
+final class PostgresOrderByFieldMacrosFeatureTest extends OrderByFieldMacrosFeatureTest
 {
     protected function defineEnvironment($app): void
     {
         $app['config']->set('database.default', 'test');
         $app['config']->set('database.connections.test', [
-            'driver'   => 'mysql',
+            'driver'   => 'pgsql',
             'database' => ':memory:',
             'prefix'   => '',
         ]);
@@ -50,19 +50,19 @@ final class MySqlOrderByFieldMacrosTest extends OrderByFieldMacrosTest
                 'status',
                 ['new', 'published', 'rejected'],
                 null,
-                "select * from `actions_log` order by field(`status`,'new','published','rejected') asc"
+                "select * from \"actions_log\" order by (case when \"status\"='new' then 1 when \"status\"='published' then 2 when \"status\"='rejected' then 3 else 0 end) asc"
             ],
             [
                 'status',
                 ['new', 'published', 'rejected'],
                 'asc',
-                "select * from `actions_log` order by field(`status`,'new','published','rejected') asc"
+                "select * from \"actions_log\" order by (case when \"status\"='new' then 1 when \"status\"='published' then 2 when \"status\"='rejected' then 3 else 0 end) asc"
             ],
             [
                 'status',
                 ['new', 'published', 'rejected'],
                 'desc',
-                "select * from `actions_log` order by field(`status`,'new','published','rejected') desc"
+                "select * from \"actions_log\" order by (case when \"status\"='new' then 1 when \"status\"='published' then 2 when \"status\"='rejected' then 3 else 0 end) desc"
             ],
         ];
     }

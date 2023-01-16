@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MihaiValentin\LaravelOrderByField\Tests\Config;
+namespace MihaiValentin\LaravelOrderByField\Tests\Integration\Config;
 
 final class MySql
 {

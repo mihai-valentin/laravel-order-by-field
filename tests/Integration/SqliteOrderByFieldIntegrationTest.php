@@ -7,9 +7,9 @@ declare(strict_types=1);
 namespace MihaiValentin\LaravelOrderByField\Tests\Integration;
 
 use Illuminate\Support\Facades\DB;
-use MihaiValentin\LaravelOrderByField\Tests\Config\Sqlite;
+use MihaiValentin\LaravelOrderByField\Tests\Integration\Config\Sqlite;
 
-final class SqliteOrderByFieldTest extends OrderByFieldTest
+final class SqliteOrderByFieldIntegrationTest extends OrderByFieldServiceProviderAwareIntegrationTest
 {
     protected function defineEnvironment($app): void
     {

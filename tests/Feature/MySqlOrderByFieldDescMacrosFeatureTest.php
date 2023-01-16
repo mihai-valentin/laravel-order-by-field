@@ -9,9 +9,9 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\DB;
-use MihaiValentin\LaravelOrderByField\Tests\Feature\OrderByFieldMacrosTest;
+use MihaiValentin\LaravelOrderByField\Tests\Feature\OrderByFieldMacrosFeatureTest;
 
-final class MySqlOrderByFieldDescMacrosTest extends OrderByFieldMacrosTest
+final class MySqlOrderByFieldDescMacrosFeatureTest extends OrderByFieldMacrosFeatureTest
 {
     protected function defineEnvironment($app): void
     {

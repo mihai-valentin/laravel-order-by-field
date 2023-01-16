@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace MihaiValentin\LaravelOrderByField\Tests\Integration;
 
 use Illuminate\Support\Facades\DB;
-use MihaiValentin\LaravelOrderByField\Tests\Config\MySql;
-use MihaiValentin\LaravelOrderByField\Tests\Config\PgSql;
-use MihaiValentin\LaravelOrderByField\Tests\Config\Sqlite;
+use MihaiValentin\LaravelOrderByField\Tests\Integration\Config\MySql;
+use MihaiValentin\LaravelOrderByField\Tests\Integration\Config\PgSql;
+use MihaiValentin\LaravelOrderByField\Tests\Integration\Config\Sqlite;
 use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
 use Orchestra\Testbench\TestCase;
 
-final class MultiConnectionOrderByFieldTest extends TestCase
+final class MultiConnectionOrderByFieldIntegrationTest extends TestCase
 {
     public function testWillGetSameResultUsingDifferentDBMS(): void
     {

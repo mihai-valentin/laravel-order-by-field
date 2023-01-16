@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace MihaiValentin\LaravelOrderByField\Tests\Integration;
+namespace MihaiValentin\LaravelOrderByField\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
 use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
 use Orchestra\Testbench\TestCase;
 
-abstract class OrderByFieldTest extends TestCase
+abstract class OrderByFieldMacrosFeatureTest extends TestCase
 {
     protected function getPackageProviders($app): array
     {
@@ -18,36 +18,36 @@ abstract class OrderByFieldTest extends TestCase
         ];
     }
 
-    public function testWillThrowInvalidArgumentExceptionTryingToOrderRowsByEmptyColumnName(): void
+    public function testWillCompileOrderByFieldSqlFailWithEmptyColumnName(): void
     {
         $exception = new InvalidArgumentException('The $column argument must be a non-empty string');
         $this->expectExceptionObject($exception);
 
-        DB::table('test_log')
-            ->orderByField('', ['new', 'published', 'rejected'])
-            ->get()
+        DB::table('actions_log')
+            ->orderByField('', ['new', 'published', 'rejected'], 'desc')
+            ->toSql()
         ;
     }
 
-    public function testWillThrowInvalidArgumentExceptionTryingToOrderRowsWithEmptyOrderArray(): void
+    public function testWillCompileOrderByFieldSqlFailWithEmptyOrderArray(): void
     {
         $exception = new InvalidArgumentException('The $order argument must be a non-empty list of strings');
         $this->expectExceptionObject($exception);
 
-        DB::table('test_log')
-            ->orderByField('status', [])
-            ->get()
+        DB::table('actions_log')
+            ->orderByField('status', [], 'desc')
+            ->toSql()
         ;
     }
 
-    public function testWillThrowInvalidArgumentExceptionTryingToOrderRowsWithWrongDirection(): void
+    public function testWillCompileOrderByFieldSqlFailWithWrongDirection(): void
     {
         $exception = new InvalidArgumentException('The $direction argument must be one of: "asc", "desc"');
         $this->expectExceptionObject($exception);
 
-        DB::table('test_log')
+        DB::table('actions_log')
             ->orderByField('status', ['new', 'published', 'rejected'], 'wrong_direction')
-            ->get()
+            ->toSql()
         ;
     }
 }

@@ -12,7 +12,7 @@ namespace MihaiValentin\LaravelOrderByField\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
 
-final class SqliteOrderByFieldMacrosTest extends OrderByFieldMacrosTest
+final class SqliteOrderByFieldMacrosFeatureTest extends OrderByFieldMacrosFeatureTest
 {
     protected function defineEnvironment($app): void
     {
