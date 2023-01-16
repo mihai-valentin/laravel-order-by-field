@@ -79,7 +79,7 @@ use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
 interface Builder {}
 ```
 
-> You can find it [here]()
+> You can find it [here](https://github.com/mihai-valentin/laravel-order-by-field/blob/97ea045d9fcbc81b3b765bfe1cecec5cbcabce1d/_ide_autocomplete_helper.php)
 
 ## PhpStan stub
 
@@ -97,7 +97,7 @@ namespace Illuminate\Contracts\Database\Query;
 interface Builder {}
 ```
 
-> You can find it [here]()
+> You can find it [here](https://github.com/mihai-valentin/laravel-order-by-field/blob/97ea045d9fcbc81b3b765bfe1cecec5cbcabce1d/.phpstan/stubs/Builder.stub)
 > 
 > Do not forget to add new stub into config `stubFiles` section
 
