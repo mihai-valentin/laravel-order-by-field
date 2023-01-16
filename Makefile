@@ -5,9 +5,15 @@ composer.lock: composer.json
 
 test: phpunit src-phpstan cs-fixer
 
-phpunit:
+phpunit: phpunit-unit phpunit-feature phpunit-integration
+
+phpunit-unit:
 	vendor/bin/phpunit --testsuite=Unit
+
+phpunit-feature:
 	vendor/bin/phpunit --testsuite=Feature
+
+phpunit-integration:
 	vendor/bin/phpunit --testsuite=Integration
 
 src-phpstan:
