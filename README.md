@@ -79,7 +79,8 @@ use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
 interface Builder {}
 ```
 
-> You can find it [here](https://github.com/mihai-valentin/laravel-order-by-field/blob/97ea045d9fcbc81b3b765bfe1cecec5cbcabce1d/_ide_autocomplete_helper.php)
+> You can find
+> it [here](https://github.com/mihai-valentin/laravel-order-by-field/blob/97ea045d9fcbc81b3b765bfe1cecec5cbcabce1d/_ide_autocomplete_helper.php)
 
 ## PhpStan stub
 
@@ -97,8 +98,9 @@ namespace Illuminate\Contracts\Database\Query;
 interface Builder {}
 ```
 
-> You can find it [here](https://github.com/mihai-valentin/laravel-order-by-field/blob/97ea045d9fcbc81b3b765bfe1cecec5cbcabce1d/.phpstan/stubs/Builder.stub)
-> 
+> You can find
+> it [here](https://github.com/mihai-valentin/laravel-order-by-field/blob/97ea045d9fcbc81b3b765bfe1cecec5cbcabce1d/.phpstan/stubs/Builder.stub)
+>
 > Do not forget to add new stub into config `stubFiles` section
 
 ## Tests
@@ -126,8 +128,15 @@ make
 
 ## Code of Conduct
 
+In order to ensure that the community is welcoming to all, please review and abide by
+the [Code of Conduct](https://github.com/mihai-valentin/laravel-order-by-field/blob/c744134f4e2145138a0d5a15799746708771fcf4/CODE_OF_CONDUCT.md).
+
 ## Contributing
+
+
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/mihai-valentin/laravel-order-by-field/blob/2f2de827ddb697e76b1e64a24908ebe3973dce73/LICENSE.md) for more information.
+The MIT License (MIT). Please
+see [License File](https://github.com/mihai-valentin/laravel-order-by-field/blob/2f2de827ddb697e76b1e64a24908ebe3973dce73/LICENSE.md)
+for more information.
