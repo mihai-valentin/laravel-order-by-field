@@ -10,12 +10,6 @@ Get the package
 composer require mihai-valentin/laravel-order-by-field
 ```
 
-Add service provider into your `config/app.php` providers list
-
-```php
-\MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider::class
-```
-
 ## Usage
 
 ```php
