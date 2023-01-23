@@ -3,5 +3,3 @@ parameters:
     paths:
         - src
         - tests
-    stubFiles:
-        - .phpstan/stubs/Builder.stub
