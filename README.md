@@ -66,42 +66,31 @@ You can create an `_ide_helper` file to tell your IDE about new methods. The hel
 ```php
 <?php
 
-namespace Illuminate\Contracts\Database\Query;
+namespace Illuminate\Contracts\Database\Query {
+    use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
 
-use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
+    /**
+     * @method Builder orderByField(string $column, array $order, string $direction = 'asc')
+     * @method Builder orderByFieldDesc(string $column, array $order)
+     *
+     * @see OrderByFieldServiceProvider
+     */
+    interface Builder {}
+}
 
-/**
- * @method Builder orderByField(string $column, array $order, string $direction = 'asc')
- * @method Builder orderByFieldDesc(string $column, array $order)
- *
- * @see OrderByFieldServiceProvider
- */
-interface Builder {}
+namespace Illuminate\Database\Eloquent {
+    /**
+     * @method Builder orderByField(string $column, array $order, string $direction = 'asc')
+     * @method Builder orderByFieldDesc(string $column, array $order)
+     *
+     * @see OrderByFieldServiceProvider
+     */
+    class Builder implements BuilderContract {}
+}
 ```
 
 > You can find
-> it [here](https://github.com/mihai-valentin/laravel-order-by-field/blob/97ea045d9fcbc81b3b765bfe1cecec5cbcabce1d/_ide_autocomplete_helper.php)
-
-## PhpStan stub
-
-If you are using `PhpStan` and you want to provide methods meta-data, then you can use a stub
-
-```stub
-<?php
-
-namespace Illuminate\Contracts\Database\Query;
-
-/**
- * @method Builder orderByField(string $column, array $order, string $direction = 'asc')
- * @method Builder orderByFieldDesc(string $column, array $order)
- */
-interface Builder {}
-```
-
-> You can find
-> it [here](https://github.com/mihai-valentin/laravel-order-by-field/blob/97ea045d9fcbc81b3b765bfe1cecec5cbcabce1d/.phpstan/stubs/Builder.stub)
->
-> Do not forget to add new stub into config `stubFiles` section
+> it [here](https://github.com/mihai-valentin/laravel-order-by-field/blob/master/_ide_autocomplete_helper.php)
 
 ## Tests
 
@@ -129,14 +118,14 @@ make
 ## Code of Conduct
 
 In order to ensure that the community is welcoming to all, please review and abide by
-the [Code of Conduct](https://github.com/mihai-valentin/laravel-order-by-field/blob/c744134f4e2145138a0d5a15799746708771fcf4/CODE_OF_CONDUCT.md).
+the [Code of Conduct](https://github.com/mihai-valentin/laravel-order-by-field/blob/master/.github/CODE_OF_CONDUCT.md).
 
 ## Contributing
 
-Please see [CONTRIBUTING.md](https://github.com/mihai-valentin/laravel-order-by-field/blob/bd7e55ff29a12f05d2f1c751705b98e0a589f096/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING.md](https://github.com/mihai-valentin/laravel-order-by-field/blob/master/.github/CONTRIBUTING.md) for details.
 
 ## License
 
 The MIT License (MIT). Please
-see [License File](https://github.com/mihai-valentin/laravel-order-by-field/blob/2f2de827ddb697e76b1e64a24908ebe3973dce73/LICENSE.md)
+see [License File](https://github.com/mihai-valentin/laravel-order-by-field/blob/master/LICENSE.md)
 for more information.

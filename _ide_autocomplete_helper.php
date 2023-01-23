@@ -2,14 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Illuminate\Contracts\Database\Query;
+namespace Illuminate\Contracts\Database\Query {
 
-use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
+    use MihaiValentin\LaravelOrderByFiled\OrderByFieldServiceProvider;
 
-/**
- * @method Builder orderByField(string $column, array $order, string $direction = 'asc')
- * @method Builder orderByFieldDesc(string $column, array $order)
- *
- * @see OrderByFieldServiceProvider
- */
-interface Builder {}
+    /**
+     * @method Builder orderByField(string $column, array $order, string $direction = 'asc')
+     * @method Builder orderByFieldDesc(string $column, array $order)
+     *
+     * @see OrderByFieldServiceProvider
+     */
+    interface Builder {}
+}
+
+namespace Illuminate\Database\Eloquent {
+    /**
+     * @method Builder orderByField(string $column, array $order, string $direction = 'asc')
+     * @method Builder orderByFieldDesc(string $column, array $order)
+     *
+     * @see OrderByFieldServiceProvider
+     */
+    class Builder implements BuilderContract {}
+}
