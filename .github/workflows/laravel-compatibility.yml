@@ -1,0 +1,38 @@
+name: "Laravel Compatibility"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        php:
+          - "8.0"
+        laravel:
+          - "9.0"
+          - "10.0"
+
+    name: PHP ${{ matrix.php }} - ${{ matrix.laravel }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: "Setup PHP"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          tools: composer:v2
+          coverage: none
+
+      - name: "Install package"
+        run: |
+          composer create-project laravel/laravel:${{ matrix.laravel }} /home/laravel_${{ matrix.laravel }}
+          cd /home/laravel_${{ matrix.laravel }}
+          composer config repositories '{"type": "path", "url": "${{ github_workspace }}", "options": {"symlink": true}}'
+          composer require mihai-valentin/laravel-order-by-field@dev
