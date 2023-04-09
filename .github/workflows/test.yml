@@ -1,0 +1,34 @@
+name: "Run tests"
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    types: [ "opened", "edited", "review_requested" ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: "Setup PHP"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          tools: composer:v2
+          coverage: none
+
+      - name: "Composer install"
+        run: composer install
+
+      - name: "Run PHPUnit tests: unit, feature"
+        run: |
+          vendor/bin/phpunit --testsuite=Unit
+          vendor/bin/phpunit --testsuite=Feature
+
+      - name: "Run PHPStan check"
+        run: vendor/bin/phpstan analyse src
