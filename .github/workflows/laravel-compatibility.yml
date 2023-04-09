@@ -3,8 +3,6 @@ name: "Laravel Compatibility"
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    types: [ "opened", "edited", "review_requested" ]
 
 jobs:
   test:
