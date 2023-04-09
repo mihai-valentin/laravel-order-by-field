@@ -36,6 +36,7 @@ jobs:
         env:
           package_path: ${{ github.workspace }}
         run: |
+          mkdir /home/laravel_${{ matrix.laravel }}
           composer create-project laravel/laravel:${{ matrix.laravel }} /home/laravel_${{ matrix.laravel }}
           cd /home/laravel_${{ matrix.laravel }}
           composer config repositories '{"type": "path", "url": "$package_path", "options": {"symlink": true}}'
