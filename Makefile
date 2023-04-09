@@ -17,7 +17,7 @@ phpunit-integration:
 	vendor/bin/phpunit --testsuite=Integration
 
 src-phpstan:
-	vendor/bin/phpstan analyse src --xdebug
+	vendor/bin/phpstan analyse src
 
 cs-fixer:
 	vendor/bin/php-cs-fixer fix -v src/
