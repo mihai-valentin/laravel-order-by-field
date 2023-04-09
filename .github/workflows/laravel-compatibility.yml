@@ -34,7 +34,7 @@ jobs:
 
       - name: "Install package"
         env:
-          package_path: ${{ github_workspace }}
+          package_path: ${{ github.workspace }}
         run: |
           composer create-project laravel/laravel:${{ matrix.laravel }} /home/laravel_${{ matrix.laravel }}
           cd /home/laravel_${{ matrix.laravel }}
