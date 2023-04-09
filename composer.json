@@ -20,11 +20,10 @@
             "MihaiValentin\\LaravelOrderByField\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "stable",
     "require": {
         "php": "^8.0",
-        "illuminate/database": "^9.0",
-        "illuminate/support": "^9.0"
+        "illuminate/database": ">=9.0",
+        "illuminate/support": ">=9.0"
     },
     "require-dev": {
         "ext-mysqli": "*",
@@ -44,5 +43,7 @@
                 "MihaiValentin\\LaravelOrderByFiled\\OrderByFieldServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
