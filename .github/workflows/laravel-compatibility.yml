@@ -1,6 +1,8 @@
 name: "Laravel Compatibility"
 
 on:
+  push:
+    branches: [ "testing/laravel-compatibility" ]
   workflow_dispatch:
 
 jobs:
