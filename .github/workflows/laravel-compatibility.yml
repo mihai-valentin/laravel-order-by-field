@@ -40,4 +40,4 @@ jobs:
           composer create-project laravel/laravel:${{ matrix.laravel }} $package_path/../laravel_${{ matrix.laravel }}
           cd $package_path/../laravel_${{ matrix.laravel }}
           composer config repositories.local '{"type": "path", "url": "$package_path", "options": {"symlink": true}}'
-          composer require mihai-valentin/laravel-order-by-field
+          composer require mihai-valentin/laravel-order-by-field:dev-master
