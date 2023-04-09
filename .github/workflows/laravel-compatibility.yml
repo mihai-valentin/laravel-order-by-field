@@ -2,8 +2,9 @@ name: "Laravel Compatibility"
 
 on:
   push:
-    branches: [ "testing/laravel-compatibility" ]
-  workflow_dispatch:
+    branches: [ "master" ]
+  pull_request:
+    types: [ "opened", "edited", "review_requested" ]
 
 jobs:
   test:
